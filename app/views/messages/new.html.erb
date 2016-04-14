@@ -1,0 +1,15 @@
+New message form!
+<% if @messages %>
+  here are all your messages:
+  <% @messages.each do |message| %>
+    <%= message.message %>
+  <% end %>
+<% end %>
+<form action="messages" method="post">>
+  <input type="text" label="message" name="message"></input>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"> 
+  <input type="submit">Save!</input>
+</form>
+
+
+  
